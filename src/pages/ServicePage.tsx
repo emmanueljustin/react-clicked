@@ -6,6 +6,8 @@ function ServicePage () {
 
   type IServices = IService[];
 
+
+  // This is a dummy data that will be replaced by data coming from api soon..
   const services: IServices = [
     {
       title: "Basic Service",

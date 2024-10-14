@@ -1,11 +1,12 @@
 interface Props {
-  children?: React.ReactNode
+  children?: React.ReactNode;
   class?: string;
+  id?: string;
 }
 
 function Container(props: Props) {
   return (
-    <div className={props.class}>{props.children}</div>
+    <div id={props.id} className={props.class}>{props.children}</div>
   )
 }
 
