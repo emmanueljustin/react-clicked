@@ -1,3 +1,4 @@
+import Container from "./components/Container"
 import Router from "./Router"
 import NavBar from "./templates/NavBar"
 
@@ -5,12 +6,12 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <Container class="flex flex-col min-h-screen">
         <NavBar />
-        <div className="flex-grow">
+        <Container class="flex-grow">
           <Router />
-        </div>  
-      </div>
+        </Container>  
+      </Container>
     </>
   )
 }

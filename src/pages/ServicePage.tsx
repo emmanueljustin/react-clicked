@@ -10,7 +10,7 @@ function ServicePage () {
   const { pricing, loading } = useSelector((state: RootState) => state.service)
 
   useEffect(() => {
-    dispatch(fetchPricing());
+    dispatch(fetchPricing()); 
   }, [dispatch])
 
   if (loading) return <p>Loading</p>

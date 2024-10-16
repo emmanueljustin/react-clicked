@@ -33,7 +33,7 @@ function ServiceCard(props: Props) {
           <Text class="font-semibold text-base pb-[1.5px]">USD</Text>
         </Container>
         <Container class="my-5 border-t border-gray-300"></Container>
-        <Button class="rounded-md w-full text-white p-2 active:bg-opacity-65" style={{ backgroundColor: props.pricing.color }} onClick={() => console.log(props.pricing.color)}>
+        <Button class="rounded-md w-full text-white p-2 active:opacity-65" style={{ backgroundColor: props.pricing.color }} onClick={() => console.log(props.pricing.color)}>
           {props.pricing.btnName}
         </Button>
       </Container>
