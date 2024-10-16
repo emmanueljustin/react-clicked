@@ -2,39 +2,39 @@ import Button from "../../components/Button";
 import Container from "../../components/Container"
 import Header from "../../components/Header"
 import Text from "../../components/Text"
-import IService from "../../interfaces/Service";
+import IPricing from "../../interfaces/Pricing";
 
 interface Props {
-  service: IService;
+  pricing: IPricing;
 }
 
 function ServiceCard(props: Props) {
   return (
     <Container class="service-card">
-      <Container class={`${props.service.color} w-full h-2`}></Container>
+      <Container class=" w-full h-2" style={{ backgroundColor: props.pricing.color }}></Container>
       <Container class="p-5">
-        <Header class="font-bold text-2xl">{props.service.title}</Header>
+        <Header class="font-bold text-2xl">{props.pricing.title}</Header>
         <Text class="mt-10 text-left">
-          {props.service.description}
+          {props.pricing.description}
         </Text>
         <ul className="mt-7">
-          {props.service.serviceItems.map((items, index) => (
+          {props.pricing.services.map((items, index) => (
             <li key={index}>
               <span className="inline-block mr-1">
                 {items.included ? '✅' : '❌'}
               </span>
-              {items.name}
+              {items.serviceName}
             </li>
           ))}
         </ul>
         <Container class="my-5 border-t border-gray-300"></Container>
         <Container class="inline-flex flex-shrink-0 items-end space-y-1">
-          <Header class="font-bold text-2xl">$ {props.service.amount.toFixed(2)}</Header>
+          <Header class="font-bold text-2xl">$ {props.pricing.amount.toFixed(2)}</Header>
           <Text class="font-semibold text-base pb-[1.5px]">USD</Text>
         </Container>
         <Container class="my-5 border-t border-gray-300"></Container>
-        <Button class={`${props.service.color} rounded-md w-full text-white p-2 active:bg-opacity-65`} onClick={() => console.log('clicked')}>
-          {props.service.btnName}
+        <Button class="rounded-md w-full text-white p-2 active:bg-opacity-65" style={{ backgroundColor: props.pricing.color }} onClick={() => console.log(props.pricing.color)}>
+          {props.pricing.btnName}
         </Button>
       </Container>
     </Container>
