@@ -5,7 +5,7 @@ interface Props {
   id?: string;
 }
 
-function Container(props: Props) {
+const Container: React.FC<Props> = (props) => {
   return (
     <div id={props.id} className={props.class} style={props.style}>{props.children}</div>
   )

@@ -9,7 +9,7 @@ interface Props {
   itinerary: IItinerary;
 }
 
-function ItineraryCard(props: Props) {
+const ItineraryCard: React.FC<Props> = (props) => {
 
   const { image, title, content } = props.itinerary;
 

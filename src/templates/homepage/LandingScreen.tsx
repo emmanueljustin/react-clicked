@@ -5,7 +5,7 @@ import Text from '../../components/Text'
 import coverPhoto from '../../assets/mountain-cover.jpg'
 import miniCoverPhoto from '../../assets/mountain-peak.jpg'
 
-function LandingPage() {
+const LandingPage = () => {
   return (
     <>
       {/* This is for medium -> large screens */}

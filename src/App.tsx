@@ -2,7 +2,7 @@ import Container from "./components/Container"
 import Router from "./Router"
 import NavBar from "./templates/NavBar"
 
-function App() {
+const App = () => {
 
   return (
     <>

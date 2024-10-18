@@ -2,7 +2,7 @@ import Container from "../../components/Container"
 import Image from "../../components/Images"
 import smartApp from "../../assets/smart-app.jpg"
 
-function PhoneTemplate() {
+const PhoneTemplate = () => {
   return (
     <>
       <Container class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">

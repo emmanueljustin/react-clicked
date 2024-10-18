@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../store/store'
-import { increment } from '../store/counterSlice'
-import Button from "../components/Button"
-import { login } from '../store/authSlice'
+import { RootState } from '../../store/store'
+import { increment } from '../../store/counterSlice'
+import Button from "../../components/Button"
+import { login } from '../../store/authSlice'
 import { useState } from 'react'
 
-function LoginCard() {
+const LoginCard = () => {
   // ? The state specific
   const count = useSelector((state: RootState) => state.counter.value)
 

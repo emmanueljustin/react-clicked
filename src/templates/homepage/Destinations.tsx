@@ -2,7 +2,7 @@ import Container from "../../components/Container"
 import Header from "../../components/Header"
 import Image from "../../components/Images"
 
-function Destination() {
+const Destination = () => {
   return (
     <Container class="w-full p-10 flex flex-col justify-center">
       <Header class="home-content-header text-shadow">Popular Destinations</Header>

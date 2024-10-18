@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/react.svg'
 import Button from '../components/Button';
 
-function NavBar() {
+const NavBar = () => {
   return (
     <>
       <nav className="bg-white z-50 dark:bg-gray-900 fixed w-full top-0 start-0 border-b border-gray-200 dark:border-gray-600">

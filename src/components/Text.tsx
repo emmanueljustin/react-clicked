@@ -3,7 +3,7 @@ interface Props {
   class?: string;
 }
 
-function Text(props: Props) {
+const Text: React.FC<Props> = (props) => {
   return (
     <p className={props.class}>{props.children}</p>
   )

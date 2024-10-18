@@ -8,7 +8,7 @@ interface Props {
   pricing: IPricing;
 }
 
-function ServiceCard(props: Props) {
+const ServiceCard: React.FC<Props> = (props: Props) => {
   return (
     <Container class="service-card">
       <Container class=" w-full h-2" style={{ backgroundColor: props.pricing.color }}></Container>

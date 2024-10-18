@@ -5,7 +5,7 @@ interface Props {
   onClick: () => void;
 }
 
-function Button(props: Props) {
+const Button: React.FC<Props> = (props)  => {
   return (
     <button className={props.class} onClick={props.onClick} style={props.style}>{props.children}</button>
   )

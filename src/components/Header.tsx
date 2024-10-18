@@ -3,7 +3,7 @@ interface Props {
   class?: string;
 }
 
-function Header(props: Props) {
+const Header: React.FC<Props> = (props) => {
   return (
     <h1 className={props.class}>{props.children}</h1>
   )

@@ -1,7 +1,7 @@
 import Container from "../components/Container"
-import LoginCard from "../templates/LoginCard"
+import LoginCard from "../templates/auth/LoginCard"
 
-function LoginPage () {
+const LoginPage = () => {
   return (
     <>
       <Container class="flex items-center justify-center h-screen">

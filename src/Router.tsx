@@ -3,7 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import ServicePage from "./pages/ServicePage";
 import HomePage from "./pages/HomePage";
 
-function Router () {
+const Router = () => {
   return (
     <>
       <Routes>

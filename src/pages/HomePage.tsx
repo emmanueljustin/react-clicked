@@ -4,11 +4,12 @@ import IItinerary from "../interfaces/Itinerary"
 import Destination from "../templates/homepage/Destinations"
 import ItineraryCard from "../templates/homepage/ItineraryCard"
 import LandingScreen from "../templates/homepage/LandingScreen"
+import PhoneTemplate from "../templates/homepage/PhoneTemplate"
 
-function HomePage() {
+const HomePage = () => {
 
   type IItineraries = IItinerary[]
-
+  
   const itineraries: IItineraries = [
     {
       image: "https://cdn.britannica.com/88/158788-050-314EBC88/Mount-Triumph-height-North-Cascades-National-Park.jpg",
@@ -46,6 +47,7 @@ function HomePage() {
         </Container>
       </Container>
       <Destination />
+      <PhoneTemplate />
     </>
   )
 }
