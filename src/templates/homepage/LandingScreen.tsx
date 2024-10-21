@@ -16,6 +16,7 @@ const LandingPage = () => {
           <Container class="w-3/4 p-20 text-center">
             <Header class="font-extrabold text-[50px] text-white">Discover Your World</Header>
             <Header class="font-extrabold text-[50px] text-white">One Adventure at a Time</Header>
+            <Header class="font-extrabold text-[50px] text-white">One Click Away</Header>
             <Text class="text-white font-medium text-xl mt-5">Click offers you a chance to explore and go on an adventure of a lifetime on where you will meet a lot of people. Explore different cultures and understand their rich history.</Text>
           </Container>
         </Container>
@@ -27,8 +28,8 @@ const LandingPage = () => {
         <Container class="absolute inset-0 w-full h-screen z-10 bg-gray-900 bg-opacity-25"></Container>
         <Container class="absolute inset-0 flex justify-center items-center z-20 w-full pt-20">
           <Container class="w-3/4 p-5 text-center">
-            <Header class="font-extrabold text-[35px] text-white">Discover Your World</Header>
             <Header class="font-extrabold text-[35px] text-white">One Adventure at a Time</Header>
+            <Header class="font-extrabold text-[35px] text-white">One Click Away</Header>
             <Text class="text-white font-medium text-lg mt-5">Click offers you a chance to explore and go on an adventure of a lifetime on where you will meet a lot of people. Explore different cultures and understand their rich history.</Text>
           </Container>
         </Container>

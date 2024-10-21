@@ -7,6 +7,14 @@
     @apply font-custom
     bg-[#E0F7FA]
   }
+
+  .font-outline-2 {
+    -webkit-text-stroke: 2px #4B5563;
+  }
+
+  .font-outline-4 {
+    -webkit-text-stroke: 4px #4B5563;
+  }
 }
 
 @keyframes rotate {
@@ -78,7 +86,7 @@
   font-bold
   text-[35px]
   md:text-[40px]
-  mt-20
+  mt-10
   select-none
   hover:text-blue-400
 }
@@ -97,4 +105,16 @@
   hover:scale-105
   hover:shadow-lg
   hover:cursor-pointer
+}
+
+/* Button Styles */
+.primary-btn {
+  @apply mt-10
+  bg-blue-600
+  rounded-md
+  text-white
+  font-medium
+  w-full
+  py-2
+  active:bg-opacity-65
 }

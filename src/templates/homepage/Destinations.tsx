@@ -4,7 +4,7 @@ import Image from "../../components/Images"
 
 const Destination = () => {
   return (
-    <Container class="w-full p-10 flex flex-col justify-center">
+    <Container class="w-full p-10 flex flex-col justify-center text-center">
       <Header class="home-content-header text-shadow">Popular Destinations</Header>
 
       {/* Main Column */}

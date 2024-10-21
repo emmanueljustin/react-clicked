@@ -5,11 +5,12 @@ import Header from "../../components/Header"
 import Input from "../../components/Input"
 import Label from "../../components/Label"
 import Link from "../../components/Link"
+import Text from "../../components/Text"
 
 const LoginCard = () => {
   return (
     <>
-      <Container class="p-10 bg-white rounded-md shadow-lg w-3/12">
+      <Container class="p-10 bg-white rounded-md shadow-lg mt-10 md:w-[60%] lg:w-[90%]">
         <Header class="font-extrabold text-2xl text-gray-600">Sign in your account</Header>
         
         <Container class="mt-10 space-y-5">
@@ -24,10 +25,15 @@ const LoginCard = () => {
             <Label class="ml-3 text-sm text-gray-500">Remember me</Label>
           </Container>
 
-          <Link href="https://google.com/" class="text-sm font-medium text-blue-600">Forgot Password</Link>
+          <Link href="https://google.com/" class="text-sm font-medium text-blue-600 underline">Forgot Password</Link>
         </Container>
 
-        <Button class="mt-10 bg-blue-600 rounded-md text-white font-medium w-full py-2 active:bg-opacity-65" onClick={() => {}}>Sign in</Button>
+        <Button class="primary-btn" onClick={() => {}}>Sign in</Button>
+
+        <Container class="flex mt-4 justify-center text-sm">
+          <Text class="text-gray-600">Dont have an acount?</Text>
+          <Text class="ml-1 font-medium text-blue-600 cursor-pointer underline">Sign up</Text>
+        </Container>
       </Container>
     </>
   )

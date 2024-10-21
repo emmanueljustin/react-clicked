@@ -1,6 +1,7 @@
 import Container from "./components/Container"
 import Router from "./Router"
 import NavBar from "./templates/NavBar"
+import "@fortawesome/fontawesome-free/css/all.min.css"
 
 const App = () => {
 

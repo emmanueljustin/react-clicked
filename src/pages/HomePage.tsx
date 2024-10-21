@@ -4,7 +4,7 @@ import IItinerary from "../interfaces/Itinerary"
 import Destination from "../templates/homepage/Destinations"
 import ItineraryCard from "../templates/homepage/ItineraryCard"
 import LandingScreen from "../templates/homepage/LandingScreen"
-import PhoneTemplate from "../templates/homepage/PhoneTemplate"
+import Reviews from "../templates/homepage/Reviews"
 
 const HomePage = () => {
 
@@ -36,8 +36,8 @@ const HomePage = () => {
   return (
     <>
       <LandingScreen />
-      <Container id="info" class="w-full px-10 mx-auto mb-10">
-        <Header class="home-content-header text-shadow">
+      <Container id="info" class="w-full px-10 mx-auto mb-5">
+        <Header class="home-content-header text-shadow text-center">
           Plan Your Trip With Us
         </Header>
         <Container class="mt-10 block space-x-0 space-y-6 md:inline-flex md:space-x-6 md:space-y-0">
@@ -47,7 +47,8 @@ const HomePage = () => {
         </Container>
       </Container>
       <Destination />
-      <PhoneTemplate />
+      <Reviews />
+      {/* <PhoneTemplate /> */}
     </>
   )
 }
