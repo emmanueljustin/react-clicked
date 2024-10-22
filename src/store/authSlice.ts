@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import RegisterRequest from "../interfaces/request/RegisterRequest";
 
 // Payload
 interface PayLoad {
@@ -11,12 +12,22 @@ interface AuthState {
   loading: boolean;
   username: string;
   password: string;
+  registerForm: RegisterRequest;
 }
 
 const initialState: AuthState = {
   loading: false,
   username: "",
   password: "",
+  registerForm: {
+    username: "",
+    password: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    age: 0,
+    gender: ""
+  } as RegisterRequest,
 }
 
 const authSlice = createSlice({
@@ -29,9 +40,14 @@ const authSlice = createSlice({
 
       console.log(state.username);
       console.log(state.password);
+    },
+
+    register(state, action) {
+      state.registerForm = action.payload;
+      console.log(state.registerForm);
     }
   }
 });
 
-export const { login } = authSlice.actions;
+export const { login, register } = authSlice.actions;
 export default authSlice.reducer;

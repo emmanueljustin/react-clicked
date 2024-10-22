@@ -6,14 +6,15 @@ interface Props {
   label: string;
   inputType: string;
   placeHolder: string;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const TextField: React.FC<Props> = (props) => {
   return (
     <>
       <Container>
-        <Label class="block mb-2 font-bold text-base text-gray-600">{props.label}</Label>
-        <Input type={props.inputType} class="bg-gray-50 border border-gray-300 rounded-lg block w-full p-2.5 focus:outline-none" placeHolder={props.placeHolder} />
+        <Label class="block mb-0 font-bold text-sm text-gray-600">{props.label}</Label>
+        <Input onChange={props.onChange} type={props.inputType} class="bg-gray-50 border border-gray-300 rounded-lg block w-full p-2.5 focus:outline-none" placeHolder={props.placeHolder} />
       </Container>
     </>
   )

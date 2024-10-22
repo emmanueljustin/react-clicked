@@ -33,7 +33,7 @@ const reviewsData = [
     description: "Life Changing",
     content: "Great experience overall, but some activities could have been better organized."
   },
-];
+]
 
 const Reviews = () => {
 

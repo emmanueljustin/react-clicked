@@ -107,14 +107,45 @@
   hover:cursor-pointer
 }
 
+/* Auth Form  Style */
+.auth-form-header {
+  @apply font-extrabold
+  text-2xl
+  text-gray-600
+}
+
 /* Button Styles */
 .primary-btn {
-  @apply mt-10
-  bg-blue-600
+  @apply bg-blue-600
   rounded-md
   text-white
   font-medium
   w-full
   py-2
   active:bg-opacity-65
+}
+
+.drop-down-btn {
+  @apply flex
+  bg-gray-50
+  justify-between
+  items-center
+  rounded-md
+  w-full
+  p-2.5
+  border
+  border-solid
+  border-gray-300
+  cursor-pointer
+  active:bg-gray-300
+  select-none
+}
+
+.drop-down-selection {
+  @apply block
+  cursor-pointer
+  hover:bg-blue-600
+  hover:text-white
+  px-2
+  select-none
 }
