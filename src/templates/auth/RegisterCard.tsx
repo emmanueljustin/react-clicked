@@ -31,7 +31,7 @@ const RegisterCard = () => {
 
   return (
     <>
-      <Container class="flex felx-col bg-white rounded-md w-3/4 shadow-lg mt-10">
+      <Container class="flex bg-white rounded-md w-3/4 shadow-lg mt-10">
         <Container class="p-10 w-full lg:w-1/2">
           <Header class="auth-form-header">Create your account</Header>
 
