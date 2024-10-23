@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import IPricing from "../interfaces/Pricing";
+import IPricing from "../interfaces/pricing";
 import axios from "axios";
 
 interface ServiceState {

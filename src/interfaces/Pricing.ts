@@ -1,4 +1,4 @@
-import IService from "./Service";
+import IService from "./service";
 
 export default interface IPricing {
   title: string;

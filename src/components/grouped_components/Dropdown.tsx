@@ -11,6 +11,8 @@ interface Props {
   items: string[];
   class?: string;
   label?: string;
+  error?: boolean;
+  errorMessage?: string;
 }
 
 const Dropdown: React.FC<Props> = (props) => {
@@ -18,7 +20,7 @@ const Dropdown: React.FC<Props> = (props) => {
   const dispatch = useDispatch();
 
   const [toggle, setToggle] = useState(false)
-  const [value, setValue] = useState(props.type)
+  const [value, setValue] = useState('')
 
   useEffect(() => {
     dispatch(setSelectedItem(value))
@@ -32,7 +34,7 @@ const Dropdown: React.FC<Props> = (props) => {
             <Label class="block mb-0 font-bold text-sm text-gray-600">{props.label}</Label>
           }
           <Container onClick={() => {setToggle(!toggle)}} class="drop-down-btn">
-            <Text class={value !== props.type ? `text-gray-900` : `text-gray-400`}>{value}</Text>
+            <Text class={value !== "" ? `text-gray-900` : `text-gray-400`}>{value === "" ? props.type : value}</Text>
             <Icon class="fa-solid fa-caret-down text-gray-600" />
           </Container>
 

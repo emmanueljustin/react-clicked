@@ -125,6 +125,15 @@
   active:bg-opacity-65
 }
 
+.disabled-btn {
+  @apply bg-[#808080]
+  rounded-md
+  text-white
+  font-medium
+  w-full
+  py-2
+}
+
 .drop-down-btn {
   @apply flex
   bg-gray-50

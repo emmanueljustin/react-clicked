@@ -1,53 +1,78 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import RegisterRequest from "../interfaces/request/RegisterRequest";
-
-// Payload
-interface PayLoad {
-  username: string;
-  password: string;
-}
+import IUserDeatils from "../interfaces/userDetails";
+import { EventStatus } from "../enums/eventStatus";
+import fetchApi from "../axios/interceptor";
+import LoginRequest from "../interfaces/request/LoginRequest";
 
 // State
 interface AuthState {
-  loading: boolean;
+  status: EventStatus;
+  token: string;
   username: string;
   password: string;
-  registerForm: RegisterRequest;
+  userDetails: IUserDeatils;
+  error: string;
 }
 
+export const login = createAsyncThunk(
+  'auth/login',
+  async (loginForm: LoginRequest) => {
+    const response = await fetchApi.post('/auth/login', loginForm);
+    return response.data;
+  }
+);
+
+export const createAccount = createAsyncThunk(
+  'auth/createAccount',
+  async (registerForm: RegisterRequest) => {
+    const response = await fetchApi.post('/auth/register', registerForm);
+    return response.data
+  }
+);
+
 const initialState: AuthState = {
-  loading: false,
+  status: EventStatus.initial,
+  token: "",
   username: "",
   password: "",
-  registerForm: {
-    username: "",
-    password: "",
-    email: "",
-    firstName: "",
-    lastName: "",
-    age: 0,
-    gender: ""
-  } as RegisterRequest,
+  userDetails: {} as IUserDeatils,
+  error: ""
 }
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {
-    login(state, action: PayloadAction<PayLoad>) {
-      state.username = action.payload.username;
-      state.password = action.payload.password;
+  reducers: {},
+  extraReducers: (builder) => {
+    // Registration Cases
+    builder.addCase(createAccount.pending, (state) => {
+      state.status = EventStatus.loading;
+    });
+    builder.addCase(createAccount.fulfilled, (state, action) => {
+      state.status = EventStatus.success;
+      state.userDetails = action.payload.data;
+    });
+    builder.addCase(createAccount.rejected, (state) => {
+      state.status = EventStatus.failed;
+      state.error = "Something went wrong"
+    });
 
-      console.log(state.username);
-      console.log(state.password);
-    },
-
-    register(state, action) {
-      state.registerForm = action.payload;
-      console.log(state.registerForm);
-    }
+    // Login Cases
+    builder.addCase(login.pending, (state) => {
+      state.status = EventStatus.loading;
+    });
+    builder.addCase(login.fulfilled, (state, action) => {
+      state.status = EventStatus.success;
+      state.token = action.payload.data;
+      console.log(state.token);
+    });
+    builder.addCase(login.rejected, (state) => {
+      state.status = EventStatus.failed;
+      state.error = "Something went wrong"
+    });
   }
 });
 
-export const { login, register } = authSlice.actions;
+// export const { login } = authSlice.actions;
 export default authSlice.reducer;
