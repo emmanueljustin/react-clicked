@@ -12,7 +12,7 @@ const ServiceCard: React.FC<Props> = (props: Props) => {
   return (
     <Container class="service-card">
       <Container class=" w-full h-2" style={{ backgroundColor: props.pricing.color }}></Container>
-      <Container class="p-5">
+      <Container class="flex flex-col flex-grow p-5">
         <Header class="font-bold text-2xl">{props.pricing.title}</Header>
         <Text class="mt-10 text-left">
           {props.pricing.description}
@@ -27,15 +27,17 @@ const ServiceCard: React.FC<Props> = (props: Props) => {
             </li>
           ))}
         </ul>
-        <Container class="my-5 border-t border-gray-300"></Container>
-        <Container class="inline-flex flex-shrink-0 items-end space-y-1">
-          <Header class="font-bold text-2xl">$ {props.pricing.amount.toFixed(2)}</Header>
-          <Text class="font-semibold text-base pb-[1.5px]">USD</Text>
+        <Container class="mt-auto">
+          <Container class="my-5 border-t border-gray-300"></Container>
+          <Container class="inline-flex flex-shrink-0 items-end space-y-1">
+            <Header class="font-bold text-2xl">$ {props.pricing.amount.toFixed(2)}</Header>
+            <Text class="font-semibold text-base pb-[1.5px]">USD</Text>
+          </Container>
+          <Container class="my-5 border-t border-gray-300"></Container>
+          <Button class="rounded-md w-full text-white p-2 active:opacity-65" style={{ backgroundColor: props.pricing.color }} onClick={() => console.log(props.pricing.color)}>
+            {props.pricing.btnName}
+          </Button>
         </Container>
-        <Container class="my-5 border-t border-gray-300"></Container>
-        <Button class="rounded-md w-full text-white p-2 active:opacity-65" style={{ backgroundColor: props.pricing.color }} onClick={() => console.log(props.pricing.color)}>
-          {props.pricing.btnName}
-        </Button>
       </Container>
     </Container>
   )
