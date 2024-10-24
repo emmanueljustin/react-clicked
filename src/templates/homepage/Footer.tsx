@@ -35,7 +35,7 @@ const Footer = () => {
           </Container>
  
           <Container class="flex flex-col space-y-4">
-            <Header class="footer-items">Blogs</Header>
+            <Header class="footer-items">FAQ</Header>
             <Header class="footer-items">News</Header>
             <Header class="footer-items">Help center</Header>
           </Container>

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import logo from '../assets/react.svg'
+// import logo from '../assets/react.svg'
 // import Button from '../components/Button';
 
 const NavBar = () => {
@@ -8,7 +8,10 @@ const NavBar = () => {
       <nav className="bg-white z-50 dark:bg-gray-900 fixed w-full top-0 start-0 border-b border-gray-200 dark:border-gray-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="https://google.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img className="rotate" src={logo} />
+          {/* <img className="rotate" src={logo} /> */}
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 fill-current text-blue-400" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.379 10.224 8 16l4.621-5.776A6.292 6.292 0 0 0 14 6.293V6A6 6 0 0 0 2 6v.293c0 1.429.486 2.815 1.379 3.93ZM8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" clip-rule="evenodd"/>
+          </svg>
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CL!CKED</span>
         </a>
         <div className="md:hidden flex">
@@ -32,7 +35,7 @@ const NavBar = () => {
               <NavLink to="/login" className={({ isActive }) => `nav-items ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Login</NavLink>
             </li>
             <li>
-              <a href="#" className="nav-items">Blogs</a>
+            <NavLink to="/faq" className={({ isActive }) => `nav-items ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>FAQ</NavLink>
             </li>
           </ul>
         </div>
