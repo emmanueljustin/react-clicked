@@ -4,7 +4,7 @@ interface Props {
   alt: string;
 }
 
-function Image(props: Props) {
+const Image: React.FC<Props> = (props) => {
   return (
     <img src={props.imgSrc} className={props.class} alt={props.alt} />
   )

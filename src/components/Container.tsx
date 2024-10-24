@@ -1,11 +1,15 @@
 interface Props {
-  children?: React.ReactNode
+  children?: React.ReactNode;
   class?: string;
+  style?: React.CSSProperties;
+  role?: string;
+  id?: string;
+  onClick?: () => void;
 }
 
-function Container(props: Props) {
+const Container: React.FC<Props> = (props) => {
   return (
-    <div className={props.class}>{props.children}</div>
+    <div id={props.id} className={props.class} style={props.style} onClick={props.onClick}>{props.children}</div>
   )
 }
 

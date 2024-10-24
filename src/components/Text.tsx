@@ -1,11 +1,12 @@
 interface Props {
-  children: string;
+  children: React.ReactNode;
   class?: string;
+  onClick?: () => void;
 }
 
-function Text(props: Props) {
+const Text: React.FC<Props> = (props) => {
   return (
-    <p className={props.class}>{props.children}</p>
+    <p onClick={props.onClick} className={props.class}>{props.children}</p>
   )
 }
 
