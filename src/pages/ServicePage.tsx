@@ -17,7 +17,7 @@ const ServicePage = () => {
 
   return (
     <>
-      <Container class="mt-32 w-full mx-auto px-10 mb-10 grid grid-cols-4 gap-5">
+      <Container class="mt-32 w-full mx-auto px-10 mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {pricing.map((service, index) => (
           <ServiceCard key={index} pricing={service} />
         ))}

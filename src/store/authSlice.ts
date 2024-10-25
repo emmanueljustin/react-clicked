@@ -12,6 +12,7 @@ interface AuthState {
   username: string;
   password: string;
   userDetails: IUserDeatils;
+  rememberMe: boolean;
   error: string;
 }
 
@@ -37,13 +38,18 @@ const initialState: AuthState = {
   username: "",
   password: "",
   userDetails: {} as IUserDeatils,
+  rememberMe: false,
   error: ""
 }
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleRemember(state, actions) {
+      state.rememberMe = actions.payload;
+    }
+  },
   extraReducers: (builder) => {
     // Registration Cases
     builder.addCase(createAccount.pending, (state) => {
@@ -74,5 +80,5 @@ const authSlice = createSlice({
   }
 });
 
-// export const { login } = authSlice.actions;
+export const { toggleRemember } = authSlice.actions;
 export default authSlice.reducer;

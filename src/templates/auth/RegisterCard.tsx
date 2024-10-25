@@ -109,12 +109,12 @@ const RegisterCard = () => {
             </Container>
           </Container>
 
-          { status === EventStatus.loading &&
+          { status === EventStatus.loading && (
             <Container class="flex items-center">
               <Spinner />
               <Text class="text-xl front-bold text-gray-800 ml-5">Signing in..</Text>
             </Container>
-          }
+          )}
 
           <Button class="mt-10 primary-btn" onClick={() => {
             const registerform: RegisterRequest = {

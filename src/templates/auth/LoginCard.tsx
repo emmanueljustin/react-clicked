@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import Button from "../../components/Button"
 import Container from "../../components/Container"
 import TextField from "../../components/grouped_components/TextField"
@@ -10,11 +10,12 @@ import Text from "../../components/Text"
 import { formToggle } from "../../store/formSwitchSlice"
 import { useState } from "react"
 import LoginRequest from "../../interfaces/request/LoginRequest"
-import { AppDispatch } from "../../store/store"
-import { login } from "../../store/authSlice"
+import { AppDispatch, RootState } from "../../store/store"
+import { login, toggleRemember } from "../../store/authSlice"
 
 const LoginCard = () => {
   const dispatch = useDispatch<AppDispatch>()
+  const remember = useSelector((state: RootState) => state.auth.rememberMe);
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -32,7 +33,13 @@ const LoginCard = () => {
         <Container class="mt-4 flex items-center justify-between">
           <Container class="flex items-start">
             <Container class="flex items-center h-5"></Container>
-            <Input type="checkbox" ariaDescribedby="remember" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-900" />
+            <Input
+              onChange={e => dispatch(toggleRemember(e.target.checked))}
+              checked={remember}
+              type="checkbox"
+              ariaDescribedby="remember"
+              class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-900"
+            />
             <Label class="ml-3 text-[12px] sm:text-sm text-gray-500">Remember me</Label>
           </Container>
 

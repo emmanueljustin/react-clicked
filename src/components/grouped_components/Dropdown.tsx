@@ -30,15 +30,15 @@ const Dropdown: React.FC<Props> = (props) => {
     <>
       <Container class={props.class}>
         <Container class="relative w-full">
-          {props.label !== null &&
+          {props.label !== null && (
             <Label class="block mb-0 font-bold text-sm text-gray-600">{props.label}</Label>
-          }
+          )}
           <Container onClick={() => {setToggle(!toggle)}} class="drop-down-btn">
             <Text class={value !== "" ? `text-gray-900` : `text-gray-400`}>{value === "" ? props.type : value}</Text>
             <Icon class="fa-solid fa-caret-down text-gray-600" />
           </Container>
 
-          {toggle &&
+          {toggle && (
           <Container class="absolute left-0 mt-2 rounded-md bg-gray-200 shadow-lg z-30">
             <Container class="space-y-1 p-2">
               {props.items.map((item, index) => (
@@ -52,7 +52,7 @@ const Dropdown: React.FC<Props> = (props) => {
               ))}
             </Container>
           </Container>
-          }
+          )}
 
         </Container>
       </Container>

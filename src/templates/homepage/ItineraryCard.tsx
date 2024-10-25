@@ -15,7 +15,7 @@ const ItineraryCard: React.FC<Props> = (props) => {
 
   return (
     <>
-      <Container class="flex flex-col overflow-clip w-full md:w-1/4 bg-white border border-gray-200 rounded-lg shadow-lg group">
+      <Container class="flex flex-col overflow-clip w-full bg-white border border-gray-200 rounded-lg shadow-lg group">
         <Container class="relative w-full h-56 overflow-clip">
           <Images class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105" imgSrc={image} alt="cover" />
         </Container>
