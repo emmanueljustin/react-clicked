@@ -4,6 +4,7 @@ import IUserDeatils from "../interfaces/userDetails";
 import { EventStatus } from "../enums/eventStatus";
 import fetchApi from "../axios/interceptor";
 import LoginRequest from "../interfaces/request/LoginRequest";
+import Cookies from "js-cookie";
 
 // State
 interface AuthState {
@@ -46,8 +47,17 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
+    authCheck(state) {
+      const token = Cookies.get('token') || "";
+      state.token = token;
+      console.log('checked')
+    },
     toggleRemember(state, actions) {
       state.rememberMe = actions.payload;
+    },
+    logout(state) {
+      Cookies.remove('token');
+      state.token = "";
     }
   },
   extraReducers: (builder) => {
@@ -58,6 +68,7 @@ const authSlice = createSlice({
     builder.addCase(createAccount.fulfilled, (state, action) => {
       state.status = EventStatus.success;
       state.userDetails = action.payload.data;
+      Cookies.set('token', state.userDetails.jwt, { expires: 1, secure: true });
     });
     builder.addCase(createAccount.rejected, (state) => {
       state.status = EventStatus.failed;
@@ -71,6 +82,7 @@ const authSlice = createSlice({
     builder.addCase(login.fulfilled, (state, action) => {
       state.status = EventStatus.success;
       state.token = action.payload.data;
+      Cookies.set('token', state.token, { expires: 1, secure: true });
       console.log(state.token);
     });
     builder.addCase(login.rejected, (state) => {
@@ -80,5 +92,5 @@ const authSlice = createSlice({
   }
 });
 
-export const { toggleRemember } = authSlice.actions;
+export const { authCheck, toggleRemember, logout } = authSlice.actions;
 export default authSlice.reducer;

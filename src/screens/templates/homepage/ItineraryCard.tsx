@@ -3,7 +3,7 @@ import Container from "../../components/Container"
 import Header from "../../components/Header"
 import Images from "../../components/Images"
 import Text from "../../components/Text"
-import IItinerary from "../../interfaces/itinerary"
+import IItinerary from "../../../interfaces/itinerary"
 
 interface Props {
   itinerary: IItinerary;

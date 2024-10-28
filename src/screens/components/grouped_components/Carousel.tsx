@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
 import Container from "../Container"
-import { RootState } from "../../store/store"
+import { RootState } from "../../../store/store"
 import { useEffect } from "react"
-import { nextImgIndex } from "../../store/carouselSlice"
-import ad1 from "../../assets/ads/ad1.jpg"
-import ad2 from "../../assets/ads/ad2.jpg"
-import ad3 from "../../assets/ads/ad3.jpg"
+import { nextImgIndex } from "../../../store/carouselSlice"
+import ad1 from "../../../assets/ads/ad1.jpg"
+import ad2 from "../../../assets/ads/ad2.jpg"
+import ad3 from "../../../assets/ads/ad3.jpg"
 import Image from "../Images"
 
 interface Props {

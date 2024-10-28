@@ -2,7 +2,7 @@ import Button from "../../components/Button";
 import Container from "../../components/Container"
 import Header from "../../components/Header"
 import Text from "../../components/Text"
-import IPricing from "../../interfaces/pricing";
+import IPricing from "../../../interfaces/pricing";
 
 interface Props {
   pricing: IPricing;

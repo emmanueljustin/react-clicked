@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Container from "../components/Container"
 import ServiceCard from "../templates/services/ServiceCard"
-import { AppDispatch, RootState } from '../store/store';
-import { fetchPricing } from '../store/serviceSlice';
+import { AppDispatch, RootState } from '../../store/store';
+import { fetchPricing } from '../../store/serviceSlice';
 
 const ServicePage = () => {
   const dispatch = useDispatch<AppDispatch>();

@@ -4,7 +4,7 @@ import Icon from "../Icon";
 import Text from "../Text";
 import Label from "../Label";
 import { useDispatch } from "react-redux";
-import { setSelectedItem } from "../../store/dropDownSlice";
+import { setSelectedItem } from "../../../store/dropDownSlice";
 
 interface Props {
   type: string;

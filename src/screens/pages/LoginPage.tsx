@@ -1,11 +1,11 @@
 import Container from "../components/Container"
 // import Image from "../components/Images"
 import LoginCard from "../templates/auth/LoginCard"
-import cover from "../assets/mountain-peak.jpg"
+import cover from "../../assets/mountain-peak.jpg"
 import Header from "../components/Header"
 import Text from "../components/Text"
 import { useSelector } from "react-redux"
-import { RootState } from "../store/store"
+import { RootState } from "../../store/store"
 import RegisterCard from "../templates/auth/RegisterCard"
 
 const LoginPage = () => {

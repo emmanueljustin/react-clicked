@@ -1,6 +1,6 @@
 import Container from "../components/Container"
 import Header from "../components/Header"
-import IItinerary from "../interfaces/itinerary"
+import IItinerary from "../../interfaces/itinerary"
 import Destination from "../templates/homepage/Destinations"
 import Footer from "../templates/homepage/Footer"
 import ItineraryCard from "../templates/homepage/ItineraryCard"

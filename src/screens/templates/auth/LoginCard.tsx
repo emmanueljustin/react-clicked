@@ -5,13 +5,12 @@ import TextField from "../../components/grouped_components/TextField"
 import Header from "../../components/Header"
 import Input from "../../components/Input"
 import Label from "../../components/Label"
-import Link from "../../components/Link"
 import Text from "../../components/Text"
-import { formToggle } from "../../store/formSwitchSlice"
+import { formToggle } from "../../../store/formSwitchSlice"
 import { useState } from "react"
-import LoginRequest from "../../interfaces/request/LoginRequest"
-import { AppDispatch, RootState } from "../../store/store"
-import { login, toggleRemember } from "../../store/authSlice"
+import LoginRequest from "../../../interfaces/request/LoginRequest"
+import { AppDispatch, RootState } from "../../../store/store"
+import { login, toggleRemember } from "../../../store/authSlice"
 
 const LoginCard = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -43,7 +42,7 @@ const LoginCard = () => {
             <Label class="ml-3 text-[12px] sm:text-sm text-gray-500">Remember me</Label>
           </Container>
 
-          <Link href="https://google.com/" class="text-[12px] sm:text-sm font-medium text-blue-600 underline">Forgot Password</Link>
+          <Button onClick={() => {}} class="text-[12px] sm:text-sm font-medium text-blue-600 underline">Forgot Password</Button>
         </Container>
 
         <Button class="mt-5 sm:mt-10 primary-btn" onClick={() => {

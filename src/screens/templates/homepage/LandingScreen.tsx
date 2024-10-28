@@ -2,8 +2,8 @@ import Image from '../../components/Images'
 import Header from '../../components/Header'
 import Container from '../../components/Container'
 import Text from '../../components/Text'
-import coverPhoto from '../../assets/mountain-cover.jpg'
-import miniCoverPhoto from '../../assets/mountain-peak.jpg'
+import coverPhoto from '../../../assets/mountain-cover.jpg'
+import miniCoverPhoto from '../../../assets/mountain-peak.jpg'
 
 const LandingPage = () => {
   return (

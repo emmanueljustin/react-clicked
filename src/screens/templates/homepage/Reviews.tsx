@@ -5,8 +5,8 @@ import Icon from "../../components/Icon"
 import Image from "../../components/Images"
 import Text from "../../components/Text"
 import { useDispatch, useSelector } from "react-redux"
-import { RootState } from "../../store/store"
-import { nextIndex } from "../../store/reviewSlice"
+import { RootState } from "../../../store/store"
+import { nextIndex } from "../../../store/reviewSlice"
 
 const reviewsData = [
   {
