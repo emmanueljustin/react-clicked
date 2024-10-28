@@ -10,8 +10,6 @@ import Cookies from "js-cookie";
 interface AuthState {
   status: EventStatus;
   token: string;
-  username: string;
-  password: string;
   userDetails: IUserDeatils;
   rememberMe: boolean;
   error: string;
@@ -20,6 +18,7 @@ interface AuthState {
 export const login = createAsyncThunk(
   'auth/login',
   async (loginForm: LoginRequest) => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     const response = await fetchApi.post('/auth/login', loginForm);
     return response.data;
   }
@@ -28,6 +27,7 @@ export const login = createAsyncThunk(
 export const createAccount = createAsyncThunk(
   'auth/createAccount',
   async (registerForm: RegisterRequest) => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     const response = await fetchApi.post('/auth/register', registerForm);
     return response.data
   }
@@ -36,8 +36,6 @@ export const createAccount = createAsyncThunk(
 const initialState: AuthState = {
   status: EventStatus.initial,
   token: "",
-  username: "",
-  password: "",
   userDetails: {} as IUserDeatils,
   rememberMe: false,
   error: ""
@@ -69,6 +67,7 @@ const authSlice = createSlice({
       state.status = EventStatus.success;
       state.userDetails = action.payload.data;
       Cookies.set('token', state.userDetails.jwt, { expires: 1, secure: true });
+      state.token = state.userDetails.jwt;
     });
     builder.addCase(createAccount.rejected, (state) => {
       state.status = EventStatus.failed;
@@ -83,7 +82,6 @@ const authSlice = createSlice({
       state.status = EventStatus.success;
       state.token = action.payload.data;
       Cookies.set('token', state.token, { expires: 1, secure: true });
-      console.log(state.token);
     });
     builder.addCase(login.rejected, (state) => {
       state.status = EventStatus.failed;

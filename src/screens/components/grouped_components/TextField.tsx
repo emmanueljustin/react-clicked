@@ -8,6 +8,7 @@ interface Props {
   label: string;
   inputType: string;
   placeHolder: string;
+  readOnly?: boolean;
   error?: boolean;
   errorMessage?: string;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
@@ -23,8 +24,9 @@ const TextField: React.FC<Props> = (props) => {
         <Container class="relative">
           <Input
             onChange={props.onChange}
+            readOnly={props.readOnly}
             type={visible ? `text` : props.inputType}
-            class={`bg-gray-50 border ${props.error ? 'border-red-600' : `border-gray-300`} rounded-lg block w-full p-2.5 focus:outline-none`}
+            class={`bg-gray-50 border ${props.error ? 'border-red-600' : `border-gray-300`} ${props.readOnly ? 'text-gray-500' : '' } rounded-lg block w-full p-2.5 focus:outline-none`}
             placeHolder={props.placeHolder}
           />
           { props.inputType === "password" && (

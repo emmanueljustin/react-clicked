@@ -2,6 +2,7 @@ interface Props {
   type: string;
   name?: string;
   class?: string;
+  readOnly?: boolean;
   placeHolder?: string;
   ariaDescribedby?: string;
   checked?: boolean;
@@ -12,6 +13,7 @@ const Input: React.FC<Props> = (props) => {
   return (
     <input
       onChange={props.onChange}
+      readOnly={props.readOnly}
       type={props.type}
       name={props.name}
       placeholder={props.placeHolder}

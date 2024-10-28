@@ -8,6 +8,7 @@ import { setSelectedItem } from "../../../store/dropDownSlice";
 
 interface Props {
   type: string;
+  readOnly?: boolean;
   items: string[];
   class?: string;
   label?: string;
@@ -33,8 +34,8 @@ const Dropdown: React.FC<Props> = (props) => {
           {props.label !== null && (
             <Label class="block mb-0 font-bold text-sm text-gray-600">{props.label}</Label>
           )}
-          <Container onClick={() => {setToggle(!toggle)}} class="drop-down-btn">
-            <Text class={value !== "" ? `text-gray-900` : `text-gray-400`}>{value === "" ? props.type : value}</Text>
+          <Container onClick={props.readOnly ? () => {} : () => {setToggle(!toggle)}} class="drop-down-btn">
+            <Text class={value !== "" ? !props.readOnly ? `text-gray-900` : `text-gray-500` : `text-gray-400`}>{value === "" ? props.type : value}</Text>
             <Icon class="fa-solid fa-caret-down text-gray-600" />
           </Container>
 

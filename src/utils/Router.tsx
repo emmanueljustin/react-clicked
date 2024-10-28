@@ -4,6 +4,8 @@ import HomePage from "../screens/pages/HomePage";
 import FAQPage from "../screens/pages/FAQPage";
 import ProtectedRoutes from "./ProtectedRoutes";
 import LoginRoute from "./LoginRoute";
+import ProfilePage from "../screens/pages/authenticated/ProfilePage";
+import RegisterRoute from "./RegisterRoute";
 
 const Router = () => {
   return (
@@ -11,9 +13,9 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginRoute />} />
+        <Route path="/register" element={<RegisterRoute />} />
         <Route element={<ProtectedRoutes />}>
-          {/* Contains all of the protected routes under auth */}
-          
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route path="/services" element={<ServicePage />} />
         <Route path="/faq" element={<FAQPage />} />
