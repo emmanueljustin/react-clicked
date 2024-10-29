@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import Container from "../components/Container"
 import Header from "../components/Header"
 import Icon from '../components/Icon';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import profPic from "../../assets/boy.jpg";
 import Image from '../components/Images';
 import Text from '../components/Text';
@@ -18,6 +18,10 @@ const NavBar = () => {
   const [showList, setShowList] = useState(false)
   const [showProfileOptions, setShowProfileOptions] = useState(false)
 
+  useEffect(() => {
+    setShowProfileOptions(false)
+  }, [token])
+
   return (
     <>
       <Container class="fixed w-full p-5 bg-gray-900 shadow-md z-40">
@@ -31,7 +35,7 @@ const NavBar = () => {
 
           <Container class="hidden md:flex items-center justify-center space-x-5">
             <NavLink to="/" className={({ isActive }) => `nav-items ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Home</NavLink>
-            <NavLink to="/services" className={({ isActive }) => `nav-items ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Services</NavLink>
+            <NavLink to="/pricing" className={({ isActive }) => `nav-items ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Pricing</NavLink>
             <NavLink to="/faq" className={({ isActive }) => `nav-items ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>FAQ</NavLink>
             
             {/* Authenticated navigation */}
@@ -40,11 +44,15 @@ const NavBar = () => {
             )}
             
             {token !== "" && (
-              <Container onClick={() => setShowProfileOptions(!showProfileOptions)} class="relative cursor-pointer">
-                <Image imgSrc={profPic} class="w-10 h-10 rounded-full object-cover border-2" alt="pic" />
+              <Container
+                onMouseEnter={() => setShowProfileOptions(true)}
+                onMouseLeave={() => setShowProfileOptions(false)}
+                class="relative cursor-pointer"
+              >
+                <Image imgSrc={profPic} id="dropdownImg"class="w-10 h-10 rounded-full object-cover border-2" alt="pic" />
 
                 {showProfileOptions && (
-                  <Container class="absolute mt-1 -right-10 flex flex-col justify-center bg-gray-800 rounded-md shadow-md cursor-pointer overflow-clip space-y-2 z-50">
+                  <Container class="absolute -right-10 flex flex-col justify-center bg-gray-800 rounded-md shadow-md cursor-pointer overflow-clip space-y-2 z-50">
                     <NavLink to="/profile" className={({ isActive }) => `profile-items ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Profile</NavLink>
                     <Text class="profile-items">Transactions</Text>
                     <Text class="profile-items">Booking</Text>
@@ -64,7 +72,7 @@ const NavBar = () => {
             {showList && (
             <Container class="absolute flex flex-col items-center justify-center mt-6 right-0 rounded-md bg-gray-800 shadow-md overflow-clip z-50">
               <NavLink to="/" className={({ isActive }) => `nav-items-min ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Home</NavLink>
-              <NavLink to="/services" className={({ isActive }) => `nav-items-min ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Services</NavLink>
+              <NavLink to="/pricing" className={({ isActive }) => `nav-items-min ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Pricing</NavLink>
               <NavLink to="/faq" className={({ isActive }) => `nav-items-min ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>FAQ</NavLink>
               <NavLink to="/login" className={({ isActive }) => `nav-items-min ${isActive ? 'bg-gray-100 bg-opacity-25' : ''}`}>Login</NavLink>
             </Container>

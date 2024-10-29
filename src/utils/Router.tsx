@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import ServicePage from "../screens/pages/ServicePage";
+import PricingPage from "../screens/pages/PricingPage";
 import HomePage from "../screens/pages/HomePage";
 import FAQPage from "../screens/pages/FAQPage";
 import ProtectedRoutes from "./ProtectedRoutes";
@@ -17,7 +17,7 @@ const Router = () => {
         <Route element={<ProtectedRoutes />}>
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
-        <Route path="/services" element={<ServicePage />} />
+        <Route path="/pricing" element={<PricingPage />} />
         <Route path="/faq" element={<FAQPage />} />
       </Routes>
     </>

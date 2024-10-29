@@ -5,7 +5,7 @@ import ServiceCard from "../templates/services/ServiceCard"
 import { AppDispatch, RootState } from '../../store/store';
 import { fetchPricing } from '../../store/serviceSlice';
 
-const ServicePage = () => {
+const PricingPage = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { pricing, loading } = useSelector((state: RootState) => state.service)
 
@@ -26,4 +26,4 @@ const ServicePage = () => {
   )
 }
 
-export default ServicePage
+export default PricingPage
