@@ -18,7 +18,7 @@ export const fetchPricing = createAsyncThunk(
     const headers = {
       'Accept': 'application/json'
     };
-    const response = await axios.get('http://localhost:8080/api/v1/pricing/all', { headers });
+    const response = await axios.get('http://192.168.0.150:8080/api/v1/pricing/all', { headers });
     return response.data;
   }
 );

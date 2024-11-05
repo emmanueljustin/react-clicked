@@ -79,6 +79,27 @@
   hover:bg-opacity-25
 }
 
+.nav-items-min {
+  @apply block
+  font-bold
+  py-2
+  px-3
+  mx-3
+  w-full
+  text-white
+  hover:bg-gray-100
+  hover:bg-opacity-25
+}
+
+.profile-items {
+  @apply text-white
+  px-3
+  py-2
+  font-bold
+  hover:bg-gray-300
+  hover:bg-opacity-65
+}
+
 .home-content-header {
   @apply flex
   w-full
